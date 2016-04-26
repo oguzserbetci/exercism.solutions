@@ -1,9 +1,4 @@
 import string
 
 def detect_anagrams(phrase, anagrams):
-  r = {}
-  for l in phrase:
-    for a in anagrams:
-      if l in a:
-        a.replace(l,'',1)
-      if len(a) == 0:
+    return [a for a in anagrams if sorted(a.lower()) == sorted(phrase.lower()) and a.lower() != phrase.lower()]
